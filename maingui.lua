@@ -1,7 +1,3 @@
--- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
-
--- Instances:
-
 local Converted = {
 	["_ScreenGui"] = Instance.new("ScreenGui");
 	["_LocalScript"] = Instance.new("LocalScript");
@@ -614,7 +610,7 @@ end
 local function autorebirth()
     while wait() do
         if getgenv().AutoRebirthEnabled then
-            if game:GetService("Players").EMRzKRlmOZxamcmGcPtq.PlayerGui.Main.Menus.Rebirth.RebirthBtn.BackgroundColor3 ~= Color3.new(150, 161, 166) then
+            if game:GetService("Players").LocalPlayer.PlayerGui.Main.Menus.Rebirth.RebirthBtn.BackgroundColor3 ~= Color3.new(150, 161, 166) then
                 local args = {
                     [1] = "S_Rebirth_Request",
                     [2] = {}
@@ -625,7 +621,33 @@ local function autorebirth()
         end
     end
 end
+local function autokill()
+    while wait() do
+	if getgenv().AutoKillEnabled then
+	   if getgenv().AutoFarmEnabled then
+		getgenv().UIToggle(game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.AutoFarm, "AutoFarmEnabled")
+	   end
+	
+	   for i,v in pairs(game:GetService("Players"):GetChildren()) do
+		function inarea(Part,Character)
+		    local touching = Part:GetTouchingParts()
+			for i=1,#touching do
+				if touching[i] == Character.HumanoidRootPart then
+					return true
+				end
+			end
+			return false
+		end
+				
+		if inarea(game:GetService("Workspace").SafeZone.Sensor, v) == false then
+	            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		end
+	   end
+	end
+    end
+end
 
 coroutine.wrap(autofarm)()
 coroutine.wrap(music)()
 coroutine.wrap(autorebirth)()
+coroutine.wrap(autokill)()
