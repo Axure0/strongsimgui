@@ -629,18 +629,20 @@ local function autokill()
 	   end
 	
 	   for i,v in pairs(game:GetService("Players"):GetChildren()) do
-		function inarea(Part,Character)
-		    local touching = Part:GetTouchingParts()
+		if v ~= game.Players.LocalPlayer then
+		    function inarea(Part,Character)
+		    	local touching = Part:GetTouchingParts()
 			for i=1,#touching do
-				if touching[i] == Character.HumanoidRootPart then
-					return true
-				end
+			   if touching[i] == Character.HumanoidRootPart then
+			      return true
+			   end
 			end
 			return false
-		end
+		    end
 				
-		if inarea(game:GetService("Workspace").SafeZone.Sensor, v) == false then
-	            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		    if inarea(game:GetService("Workspace").SafeZone.Sensor, v.Character) == false then
+		        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		    end
 		end
 	   end
 	end
