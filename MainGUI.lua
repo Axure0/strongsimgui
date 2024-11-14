@@ -418,8 +418,8 @@ local function RABG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Fra
     end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Parent.Parent.Minimised:Destroy()
-		script.Parent.Parent.Parent.Parent.Parent:Destroy()
+		game.Players.LocalPlayer.PlayerGui.Minimised:Destroy()
+		game.Players.LocalPlayer.PlayerGui.ScreenGui:Destroy()
 	end)
 end
 local function MBUNG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.MinimiseBtn.LocalScript
@@ -436,8 +436,8 @@ local function MBUNG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Fr
     end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Parent.Enabled = false
-		script.Parent.Parent.Parent.Parent.Parent.Parent.Minimised.Enabled = true
+		game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = false
+		game.Players.LocalPlayer.PlayerGui.Minimised.Enabled = true
 	end)
 end
 
