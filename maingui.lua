@@ -622,6 +622,7 @@ local function autorebirth()
     end
 end
 local function autokill()
+    local chars = game:GetService("Workspace").Characters
     while wait() do
 	if getgenv().AutoKillEnabled then
 	   if getgenv().AutoFarmEnabled then
@@ -641,7 +642,7 @@ local function autokill()
 		    end
 				
 		    if inarea(game:GetService("Workspace").SafeZone.Sensor, v.Character) == false then
-		        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = chars[v.Name].HumanoidRootPart.CFrame
 		    end
 		end
 	   end
