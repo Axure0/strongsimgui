@@ -1,7 +1,3 @@
--- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
-
--- Instances:
-
 local Converted = {
 	["_ScreenGui"] = Instance.new("ScreenGui");
 	["_LocalScript"] = Instance.new("LocalScript");
@@ -31,8 +27,6 @@ local Converted = {
 	["_LocalScript3"] = Instance.new("LocalScript");
 	["_UICorner5"] = Instance.new("UICorner");
 }
-
--- Properties:
 
 Converted["_ScreenGui"].ResetOnSpawn = false
 Converted["_ScreenGui"].Parent = game:GetService("Players").LocalPlayer.PlayerGui
@@ -198,22 +192,13 @@ Converted["_MinimiseBtn"].Parent = Converted["_Frame2"]
 Converted["_UICorner5"].CornerRadius = UDim.new(0, 15)
 Converted["_UICorner5"].Parent = Converted["_Frame"]
 
--- Fake Module Scripts:
-
 local fake_module_scripts = {}
 
-do -- Fake Module: StarterGui.ScreenGui.DragModule
+do
     local script = Instance.new("ModuleScript")
     script.Name = "DragModule"
     script.Parent = Converted["_ScreenGui"]
     local function module_script()
-		--[[
-			@Author: Spynaz
-			@Description: Enables dragging on GuiObjects. Supports both mouse and touch.
-			
-			For instructions on how to use this module, go to this link:
-			https://devforum.roblox.com/t/simple-module-for-creating-draggable-gui-elements/230678
-		--]]
 		
 		local UDim2_new = UDim2.new
 		
@@ -222,7 +207,6 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
 		local DraggableObject 		= {}
 		DraggableObject.__index 	= DraggableObject
 		
-		-- Sets up a new draggable object
 		function DraggableObject.new(Object)
 			local self 			= {}
 			self.Object			= Object
@@ -236,7 +220,6 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
 			return self
 		end
 		
-		-- Enables dragging
 		function DraggableObject:Enable()
 			local object			= self.Object
 			local dragInput			= nil
@@ -244,7 +227,6 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
 			local startPos			= nil
 			local preparingToDrag	= false
 			
-			-- Updates the element
 			local function update(input)
 				local delta 		= input.Position - dragStart
 				local newPosition	= UDim2_new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
@@ -256,14 +238,6 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
 			self.InputBegan = object.InputBegan:Connect(function(input)
 				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 					preparingToDrag = true
-					--[[if self.DragStarted then
-						self.DragStarted()
-					end
-					
-					dragging	 	= true
-					dragStart 		= input.Position
-					startPos 		= Element.Position
-					--]]
 					
 					local connection 
 					connection = input.Changed:Connect(function()
@@ -315,7 +289,6 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
 			end)
 		end
 		
-		-- Disables dragging
 		function DraggableObject:Disable()
 			self.InputBegan:Disconnect()
 			self.InputChanged:Disconnect()
@@ -336,9 +309,7 @@ do -- Fake Module: StarterGui.ScreenGui.DragModule
     fake_module_scripts[script] = module_script
 end
 
--- Fake Local Scripts:
-
-local function QDGBW_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
+local function QDGBW_fake_script()
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_ScreenGui"]
@@ -367,7 +338,7 @@ local function QDGBW_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScr
 		end
 	end
 end
-local function EGZZZLZ_fake_script() -- Fake Script: StarterGui.ScreenGui.DragGUI
+local function EGZZZLZ_fake_script()
     local script = Instance.new("LocalScript")
     script.Name = "DragGUI"
     script.Parent = Converted["_ScreenGui"]
@@ -385,7 +356,7 @@ local function EGZZZLZ_fake_script() -- Fake Script: StarterGui.ScreenGui.DragGU
 	
 	FrameDrag:Enable()
 end
-local function BMVVR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.Frame.TextButton.LocalScript
+local function BMVVR_fake_script()
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton1"]
@@ -404,7 +375,7 @@ local function BMVVR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Fr
 		UITOGGLE(script, "AutoFarmEnabled")
 	end)
 end
-local function RABG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.CloseBtn.LocalScript
+local function RABG_fake_script()
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_CloseBtn"]
@@ -422,7 +393,7 @@ local function RABG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Fra
 		game.Players.LocalPlayer.PlayerGui.ScreenGui:Destroy()
 	end)
 end
-local function MBUNG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.MinimiseBtn.LocalScript
+local function MBUNG_fake_script()
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_MinimiseBtn"]
@@ -446,3 +417,72 @@ coroutine.wrap(EGZZZLZ_fake_script)()
 coroutine.wrap(BMVVR_fake_script)()
 coroutine.wrap(RABG_fake_script)()
 coroutine.wrap(MBUNG_fake_script)()
+
+local function autofarm() 
+    local lp = game.Players.LocalPlayer
+    while wait() do
+        if getgenv().AutoFarmEnabled then
+            local toolbtn = nil
+            local arr = {}
+            for i,v in pairs(lp.PlayerGui.Main.HUD.Bars.Bottom.Toolbar:GetChildren()) do
+                if v.Name ~= "UIListLayout" then
+                    local pos = tostring(v.AbsolutePosition):split(",")[1]
+                    
+                    table.insert(arr, {v,pos})
+                end
+            end
+            table.sort(arr, function(a,b)
+                return a[2] > b[2]
+            end)
+            for a,b in pairs(arr) do
+                if table.find(arr, b) == 1 then
+                    toolbtn = b[1]
+                end
+            end
+            if toolbtn.AbsolutePosition ~= arr[1][2] then
+                local args = {
+                    [1] = "S_Tools_Toggle",
+                    [2] = {
+                        [1] = "Weight4"
+                    }
+                }
+
+                game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+            end
+
+            local args = {
+                [1] = "S_Tools_Activate",
+                [2] = {}
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+        end
+    end
+end
+local function music()
+    while wait() do
+        if getgenv().MusicEnabled == false then
+            game:GetService("Workspace").Music.Playing = false
+        elseif getgenv().MusicEnabled and game:GetService("Workspace").Music.Playing == false then
+            game:GetService("Workspace").Music.Playing = true
+        end
+    end
+end
+local function autorebirth()
+    while wait() do
+        if getgenv().AutoRebirthEnabled then
+            if game:GetService("Players").EMRzKRlmOZxamcmGcPtq.PlayerGui.Main.Menus.Rebirth.RebirthBtn.BackgroundColor3 ~= Color3.new(150, 161, 166) then
+                local args = {
+                    [1] = "S_Rebirth_Request",
+                    [2] = {}
+                }
+                
+                game:GetService("ReplicatedStorage").Common.Library.Network.RemoteFunction:InvokeServer(unpack(args))
+            end
+        end
+    end
+end
+
+coroutine.wrap(autofarm)()
+coroutine.wrap(music)()
+coroutine.wrap(autorebirth)()
