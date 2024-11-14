@@ -1,8 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local Minimised = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -11,8 +6,6 @@ local CloseBtn = Instance.new("TextButton")
 local MaximiseBtn = Instance.new("ImageButton")
 local Frame_2 = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
-
---Properties:
 
 Minimised.Name = "Minimised"
 Minimised.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -81,21 +74,12 @@ Frame_2.Size = UDim2.new(0, 304, 0, 12)
 UICorner_2.CornerRadius = UDim.new(0, 15)
 UICorner_2.Parent = Minimised
 
--- Module Scripts:
-
 local fake_module_scripts = {}
 
-do -- Minimised.DragModule2
+do
 	local script = Instance.new('ModuleScript', Minimised)
 	script.Name = "DragModule2"
 	local function module_script()
-		--[[
-			@Author: Spynaz
-			@Description: Enables dragging on GuiObjects. Supports both mouse and touch.
-			
-			For instructions on how to use this module, go to this link:
-			https://devforum.roblox.com/t/simple-module-for-creating-draggable-gui-elements/230678
-		--]]
 		
 		local UDim2_new = UDim2.new
 		
@@ -104,7 +88,6 @@ do -- Minimised.DragModule2
 		local DraggableObject 		= {}
 		DraggableObject.__index 	= DraggableObject
 		
-		-- Sets up a new draggable object
 		function DraggableObject.new(Object)
 			local self 			= {}
 			self.Object			= Object
@@ -118,7 +101,6 @@ do -- Minimised.DragModule2
 			return self
 		end
 		
-		-- Enables dragging
 		function DraggableObject:Enable()
 			local object			= self.Object
 			local dragInput			= nil
@@ -126,7 +108,6 @@ do -- Minimised.DragModule2
 			local startPos			= nil
 			local preparingToDrag	= false
 			
-			-- Updates the element
 			local function update(input)
 				local delta 		= input.Position - dragStart
 				local newPosition	= UDim2_new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
@@ -138,15 +119,7 @@ do -- Minimised.DragModule2
 			self.InputBegan = object.InputBegan:Connect(function(input)
 				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 					preparingToDrag = true
-					--[[if self.DragStarted then
-						self.DragStarted()
-					end
-					
-					dragging	 	= true
-					dragStart 		= input.Position
-					startPos 		= Element.Position
-					--]]
-					
+		
 					local connection 
 					connection = input.Changed:Connect(function()
 						if input.UserInputState == Enum.UserInputState.End and (self.Dragging or preparingToDrag) then
@@ -197,7 +170,6 @@ do -- Minimised.DragModule2
 			end)
 		end
 		
-		-- Disables dragging
 		function DraggableObject:Disable()
 			self.InputBegan:Disconnect()
 			self.InputChanged:Disconnect()
@@ -218,10 +190,7 @@ do -- Minimised.DragModule2
 	fake_module_scripts[script] = module_script
 end
 
-
--- Scripts:
-
-local function YUYC_fake_script() -- CloseBtn.LocalScript 
+local function YUYC_fake_script()
 	local script = Instance.new('LocalScript', CloseBtn)
 	local req = require
 	local require = function(obj)
@@ -238,7 +207,7 @@ local function YUYC_fake_script() -- CloseBtn.LocalScript
 	end)
 end
 coroutine.wrap(YUYC_fake_script)()
-local function UMODAU_fake_script() -- MaximiseBtn.LocalScript 
+local function UMODAU_fake_script()
 	local script = Instance.new('LocalScript', MaximiseBtn)
 	local req = require
 	local require = function(obj)
@@ -255,7 +224,7 @@ local function UMODAU_fake_script() -- MaximiseBtn.LocalScript
 	end)
 end
 coroutine.wrap(UMODAU_fake_script)()
-local function HUHR_fake_script() -- Minimised.DragGUI 
+local function HUHR_fake_script()
 	local script = Instance.new('LocalScript', Minimised)
 	local req = require
 	local require = function(obj)
