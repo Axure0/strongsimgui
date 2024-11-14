@@ -1,3 +1,7 @@
+-- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
+
+-- Instances:
+
 local Converted = {
 	["_ScreenGui"] = Instance.new("ScreenGui");
 	["_LocalScript"] = Instance.new("LocalScript");
@@ -20,15 +24,28 @@ local Converted = {
 	["_TextButton1"] = Instance.new("TextButton");
 	["_LocalScript1"] = Instance.new("LocalScript");
 	["_UICorner4"] = Instance.new("UICorner");
-	["_TextLabel1"] = Instance.new("TextLabel");
-	["_CloseBtn"] = Instance.new("TextButton");
-	["_LocalScript2"] = Instance.new("LocalScript");
-	["_MinimiseBtn"] = Instance.new("TextButton");
-	["_LocalScript3"] = Instance.new("LocalScript");
+	["_Frame7"] = Instance.new("Frame");
 	["_UICorner5"] = Instance.new("UICorner");
+	["_TextLabel1"] = Instance.new("TextLabel");
+	["_TextButton2"] = Instance.new("TextButton");
+	["_LocalScript2"] = Instance.new("LocalScript");
+	["_UICorner6"] = Instance.new("UICorner");
+	["_Frame8"] = Instance.new("Frame");
+	["_UICorner7"] = Instance.new("UICorner");
+	["_TextLabel2"] = Instance.new("TextLabel");
+	["_TextButton3"] = Instance.new("TextButton");
+	["_LocalScript3"] = Instance.new("LocalScript");
+	["_UICorner8"] = Instance.new("UICorner");
+	["_TextLabel3"] = Instance.new("TextLabel");
+	["_CloseBtn"] = Instance.new("TextButton");
+	["_LocalScript4"] = Instance.new("LocalScript");
+	["_MinimiseBtn"] = Instance.new("TextButton");
+	["_LocalScript5"] = Instance.new("LocalScript");
+	["_UICorner9"] = Instance.new("UICorner");
 }
 
-Converted["_ScreenGui"].ResetOnSpawn = false
+-- Properties:
+
 Converted["_ScreenGui"].Parent = game:GetService("Players").LocalPlayer.PlayerGui
 
 Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(35.00000171363354, 35.00000171363354, 35.00000171363354)
@@ -123,11 +140,12 @@ Converted["_TextLabel"].Text = "Auto Farm"
 Converted["_TextLabel"].TextColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel"].TextSize = 27
 Converted["_TextLabel"].TextWrapped = true
+Converted["_TextLabel"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel"].BackgroundTransparency = 1
 Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel"].BorderSizePixel = 0
-Converted["_TextLabel"].Position = UDim2.new(0, 0, -0.0666666701, 0)
+Converted["_TextLabel"].Position = UDim2.new(0.0111287758, 0, -0.0666666701, 0)
 Converted["_TextLabel"].Size = UDim2.new(0, 118, 0, 50)
 Converted["_TextLabel"].Parent = Converted["_Frame6"]
 
@@ -136,7 +154,7 @@ Converted["_TextButton1"].Text = "Disabled"
 Converted["_TextButton1"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton1"].TextSize = 26
 Converted["_TextButton1"].TextWrapped = true
-Converted["_TextButton1"].BackgroundColor3 = Color3.fromRGB(135.00005275011063, 23.00000622868538, 23.00000622868538)
+Converted["_TextButton1"].BackgroundColor3 = Color3.fromRGB(135.00000715255737, 23.000000528991222, 23.000000528991222)
 Converted["_TextButton1"].BackgroundTransparency = 0.3499999940395355
 Converted["_TextButton1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton1"].BorderSizePixel = 0
@@ -146,19 +164,97 @@ Converted["_TextButton1"].Parent = Converted["_Frame6"]
 
 Converted["_UICorner4"].Parent = Converted["_TextButton1"]
 
-Converted["_TextLabel1"].Font = Enum.Font.SourceSansSemibold
-Converted["_TextLabel1"].Text = "Strong Simulator - @axur.e"
+Converted["_Frame7"].BackgroundColor3 = Color3.fromRGB(72.00000330805779, 72.00000330805779, 72.00000330805779)
+Converted["_Frame7"].BackgroundTransparency = 0.30000001192092896
+Converted["_Frame7"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame7"].BorderSizePixel = 0
+Converted["_Frame7"].Position = UDim2.new(0, 0, 0, 100)
+Converted["_Frame7"].Size = UDim2.new(0, 629, 0, 45)
+Converted["_Frame7"].Parent = Converted["_Frame5"]
+
+Converted["_UICorner5"].Parent = Converted["_Frame7"]
+
+Converted["_TextLabel1"].Font = Enum.Font.SourceSansBold
+Converted["_TextLabel1"].Text = "Music"
 Converted["_TextLabel1"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLabel1"].TextSize = 20
+Converted["_TextLabel1"].TextSize = 27
 Converted["_TextLabel1"].TextWrapped = true
 Converted["_TextLabel1"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_TextLabel1"].BackgroundTransparency = 1
 Converted["_TextLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel1"].BorderSizePixel = 0
-Converted["_TextLabel1"].Position = UDim2.new(0.0217729397, 0, 0.200000063, 0)
-Converted["_TextLabel1"].Size = UDim2.new(0, 249, 0, 29)
-Converted["_TextLabel1"].Parent = Converted["_Frame2"]
+Converted["_TextLabel1"].Position = UDim2.new(0.0111287758, 0, -0.0666666701, 0)
+Converted["_TextLabel1"].Size = UDim2.new(0, 118, 0, 50)
+Converted["_TextLabel1"].Parent = Converted["_Frame7"]
+
+Converted["_TextButton2"].Font = Enum.Font.SourceSansSemibold
+Converted["_TextButton2"].Text = "Enabled"
+Converted["_TextButton2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextButton2"].TextSize = 26
+Converted["_TextButton2"].TextWrapped = true
+Converted["_TextButton2"].BackgroundColor3 = Color3.fromRGB(44.000001177191734, 184.00000423192978, 44.000001177191734)
+Converted["_TextButton2"].BackgroundTransparency = 0.3499999940395355
+Converted["_TextButton2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextButton2"].BorderSizePixel = 0
+Converted["_TextButton2"].Position = UDim2.new(0.823529422, 0, 0.111111112, 0)
+Converted["_TextButton2"].Size = UDim2.new(0, 104, 0, 34)
+Converted["_TextButton2"].Parent = Converted["_Frame7"]
+
+Converted["_UICorner6"].Parent = Converted["_TextButton2"]
+
+Converted["_Frame8"].BackgroundColor3 = Color3.fromRGB(72.00000330805779, 72.00000330805779, 72.00000330805779)
+Converted["_Frame8"].BackgroundTransparency = 0.30000001192092896
+Converted["_Frame8"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame8"].BorderSizePixel = 0
+Converted["_Frame8"].Position = UDim2.new(0, 0, 0, 50)
+Converted["_Frame8"].Size = UDim2.new(0, 629, 0, 45)
+Converted["_Frame8"].Parent = Converted["_Frame5"]
+
+Converted["_UICorner7"].Parent = Converted["_Frame8"]
+
+Converted["_TextLabel2"].Font = Enum.Font.SourceSansBold
+Converted["_TextLabel2"].Text = "Auto Rebirth"
+Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel2"].TextSize = 27
+Converted["_TextLabel2"].TextWrapped = true
+Converted["_TextLabel2"].TextXAlignment = Enum.TextXAlignment.Left
+Converted["_TextLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel2"].BackgroundTransparency = 1
+Converted["_TextLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel2"].BorderSizePixel = 0
+Converted["_TextLabel2"].Position = UDim2.new(0.0111287758, 0, -0.0666666701, 0)
+Converted["_TextLabel2"].Size = UDim2.new(0, 131, 0, 50)
+Converted["_TextLabel2"].Parent = Converted["_Frame8"]
+
+Converted["_TextButton3"].Font = Enum.Font.SourceSansSemibold
+Converted["_TextButton3"].Text = "Disabled"
+Converted["_TextButton3"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextButton3"].TextSize = 26
+Converted["_TextButton3"].TextWrapped = true
+Converted["_TextButton3"].BackgroundColor3 = Color3.fromRGB(135.00000715255737, 23.000000528991222, 23.000000528991222)
+Converted["_TextButton3"].BackgroundTransparency = 0.3499999940395355
+Converted["_TextButton3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextButton3"].BorderSizePixel = 0
+Converted["_TextButton3"].Position = UDim2.new(0.823529422, 0, 0.111111112, 0)
+Converted["_TextButton3"].Size = UDim2.new(0, 104, 0, 34)
+Converted["_TextButton3"].Parent = Converted["_Frame8"]
+
+Converted["_UICorner8"].Parent = Converted["_TextButton3"]
+
+Converted["_TextLabel3"].Font = Enum.Font.SourceSansSemibold
+Converted["_TextLabel3"].Text = "Strong Simulator - @axur.e"
+Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel3"].TextSize = 20
+Converted["_TextLabel3"].TextWrapped = true
+Converted["_TextLabel3"].TextXAlignment = Enum.TextXAlignment.Left
+Converted["_TextLabel3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel3"].BackgroundTransparency = 1
+Converted["_TextLabel3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel3"].BorderSizePixel = 0
+Converted["_TextLabel3"].Position = UDim2.new(0.0217729397, 0, 0.200000063, 0)
+Converted["_TextLabel3"].Size = UDim2.new(0, 249, 0, 29)
+Converted["_TextLabel3"].Parent = Converted["_Frame2"]
 
 Converted["_CloseBtn"].Font = Enum.Font.SourceSansBold
 Converted["_CloseBtn"].Text = "X"
@@ -189,16 +285,25 @@ Converted["_MinimiseBtn"].Size = UDim2.new(0, 25, 0, 45)
 Converted["_MinimiseBtn"].Name = "MinimiseBtn"
 Converted["_MinimiseBtn"].Parent = Converted["_Frame2"]
 
-Converted["_UICorner5"].CornerRadius = UDim.new(0, 15)
-Converted["_UICorner5"].Parent = Converted["_Frame"]
+Converted["_UICorner9"].CornerRadius = UDim.new(0, 15)
+Converted["_UICorner9"].Parent = Converted["_Frame"]
+
+-- Fake Module Scripts:
 
 local fake_module_scripts = {}
 
-do
+do -- Fake Module: StarterGui.ScreenGui.DragModule
     local script = Instance.new("ModuleScript")
     script.Name = "DragModule"
     script.Parent = Converted["_ScreenGui"]
     local function module_script()
+		--[[
+			@Author: Spynaz
+			@Description: Enables dragging on GuiObjects. Supports both mouse and touch.
+			
+			For instructions on how to use this module, go to this link:
+			https://devforum.roblox.com/t/simple-module-for-creating-draggable-gui-elements/230678
+		--]]
 		
 		local UDim2_new = UDim2.new
 		
@@ -207,6 +312,7 @@ do
 		local DraggableObject 		= {}
 		DraggableObject.__index 	= DraggableObject
 		
+		-- Sets up a new draggable object
 		function DraggableObject.new(Object)
 			local self 			= {}
 			self.Object			= Object
@@ -220,6 +326,7 @@ do
 			return self
 		end
 		
+		-- Enables dragging
 		function DraggableObject:Enable()
 			local object			= self.Object
 			local dragInput			= nil
@@ -227,6 +334,7 @@ do
 			local startPos			= nil
 			local preparingToDrag	= false
 			
+			-- Updates the element
 			local function update(input)
 				local delta 		= input.Position - dragStart
 				local newPosition	= UDim2_new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
@@ -238,6 +346,14 @@ do
 			self.InputBegan = object.InputBegan:Connect(function(input)
 				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 					preparingToDrag = true
+					--[[if self.DragStarted then
+						self.DragStarted()
+					end
+					
+					dragging	 	= true
+					dragStart 		= input.Position
+					startPos 		= Element.Position
+					--]]
 					
 					local connection 
 					connection = input.Changed:Connect(function()
@@ -289,6 +405,7 @@ do
 			end)
 		end
 		
+		-- Disables dragging
 		function DraggableObject:Disable()
 			self.InputBegan:Disconnect()
 			self.InputChanged:Disconnect()
@@ -309,7 +426,9 @@ do
     fake_module_scripts[script] = module_script
 end
 
-local function QDGBW_fake_script()
+-- Fake Local Scripts:
+
+local function JDVEN_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_ScreenGui"]
@@ -338,7 +457,7 @@ local function QDGBW_fake_script()
 		end
 	end
 end
-local function EGZZZLZ_fake_script()
+local function GDXL_fake_script() -- Fake Script: StarterGui.ScreenGui.DragGUI
     local script = Instance.new("LocalScript")
     script.Name = "DragGUI"
     script.Parent = Converted["_ScreenGui"]
@@ -356,7 +475,7 @@ local function EGZZZLZ_fake_script()
 	
 	FrameDrag:Enable()
 end
-local function BMVVR_fake_script()
+local function DXCAYS_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.Frame.TextButton.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_TextButton1"]
@@ -372,10 +491,48 @@ local function BMVVR_fake_script()
 	getgenv().AutoFarmEnabled = false
 	
 	script.Parent.MouseButton1Click:Connect(function()
-		UITOGGLE(script, "AutoFarmEnabled")
+		getgenv().UITOGGLE(script, "AutoFarmEnabled")
 	end)
 end
-local function RABG_fake_script()
+local function KQCPPI_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.Frame.TextButton.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_TextButton2"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	getgenv().MusicEnabled = true
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		getgenv().UITOGGLE(script, "MusicEnabled")
+	end)
+end
+local function IYRKAG_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.Frame.TextButton.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_TextButton3"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	getgenv().AutoRebirthEnabled = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		getgenv().UITOGGLE(script, "AutoRebirthEnabled")
+	end)
+end
+local function QJID_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.CloseBtn.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_CloseBtn"]
@@ -389,11 +546,11 @@ local function RABG_fake_script()
     end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		game.Players.LocalPlayer.PlayerGui.Minimised:Destroy()
 		game.Players.LocalPlayer.PlayerGui.ScreenGui:Destroy()
+		game.Players.LocalPlayer.PlayerGui.Minimised:Destroy()
 	end)
 end
-local function MBUNG_fake_script()
+local function BKMJ_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Frame.Frame.MinimiseBtn.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_MinimiseBtn"]
@@ -412,11 +569,13 @@ local function MBUNG_fake_script()
 	end)
 end
 
-coroutine.wrap(QDGBW_fake_script)()
-coroutine.wrap(EGZZZLZ_fake_script)()
-coroutine.wrap(BMVVR_fake_script)()
-coroutine.wrap(RABG_fake_script)()
-coroutine.wrap(MBUNG_fake_script)()
+coroutine.wrap(JDVEN_fake_script)()
+coroutine.wrap(GDXL_fake_script)()
+coroutine.wrap(DXCAYS_fake_script)()
+coroutine.wrap(KQCPPI_fake_script)()
+coroutine.wrap(IYRKAG_fake_script)()
+coroutine.wrap(QJID_fake_script)()
+coroutine.wrap(BKMJ_fake_script)()
 
 local function autofarm() 
     local lp = game.Players.LocalPlayer
