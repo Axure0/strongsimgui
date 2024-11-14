@@ -35,7 +35,7 @@ local Converted = {
 -- Properties:
 
 Converted["_ScreenGui"].ResetOnSpawn = false
-Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
+Converted["_ScreenGui"].Parent = game:GetService("Players").LocalPlayer.PlayerGui
 
 Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(35.00000171363354, 35.00000171363354, 35.00000171363354)
 Converted["_Frame"].BackgroundTransparency = 0.30000001192092896
