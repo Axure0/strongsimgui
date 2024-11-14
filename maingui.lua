@@ -621,33 +621,10 @@ local function autorebirth()
         end
     end
 end
-local function autokill()
-    local chars = game:GetService("Workspace").Characters
+local function removepurchases()
     while wait() do
-	if getgenv().AutoKillEnabled then
-	   if getgenv().AutoFarmEnabled then
-		getgenv().UIToggle(game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.AutoFarm, "AutoFarmEnabled")
-	   end
-
-	   local oldyframe = chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame.Y
-	
-	   for i,v in pairs(game:GetService("Players"):GetChildren()) do
-		if v ~= game.Players.LocalPlayer then
-		    function inarea(Part,Character)
-		    	local touching = Part:GetTouchingParts()
-			for i=1,#touching do
-			   if touching[i] == Character.HumanoidRootPart then
-			      return true
-			   end
-			end
-			return false
-		    end
-				
-		    if inarea(game:GetService("Workspace").SafeZone.Sensor, v.Character) == false then
-		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(Vector3.new(chars[v.Name].HumanoidRootPart.CFrame.X, oldyframe, chars[v.Name].HumanoidRootPart.CFrame.Z))
-		    end
-		end
-	   end
+	if getgenv().RemovePurchases then
+	    game:GetService("Players").LocalPlayer.PlayerGui.Main.Shadow:Destroy()
 	end
     end
 end
@@ -655,4 +632,4 @@ end
 coroutine.wrap(autofarm)()
 coroutine.wrap(music)()
 coroutine.wrap(autorebirth)()
-coroutine.wrap(autokill)()
+coroutine.wrap(removepurchases)()
