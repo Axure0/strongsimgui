@@ -581,25 +581,16 @@ local function autofarm()
     local lp = game.Players.LocalPlayer
     while wait() do
         if getgenv().AutoFarmEnabled then
-            local toolbtn = nil
-            local arr = {}
-            for i,v in pairs(lp.PlayerGui.Main.HUD.Bars.Bottom.Toolbar:GetChildren()) do
-                if v.Name ~= "UIListLayout" then
-                    local pos = tostring(v.AbsolutePosition):split(",")[1]
-                    
-                    table.insert(arr, {v,pos})
-                end
-            end
-            table.sort(arr, function(a,b)
-                return a[2] > b[2]
-            end)
-            for a,b in pairs(arr) do
-                if table.find(arr, b) == 1 then
-                    toolbtn = b[1]
-                end
-            end
-            if toolbtn.AbsolutePosition ~= arr[1][2] then
-                local args = {
+	    local oldval = game.Players.LocalPlayer.leaderstats["💪Strength"].Value
+            local args = {
+                [1] = "S_Tools_Activate",
+                [2] = {}
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+            
+	    if game.Players.LocalPlayer.leaderstats["💪Strength"].Value == oldval then
+		local args = {
                     [1] = "S_Tools_Toggle",
                     [2] = {
                         [1] = "Weight4"
@@ -607,15 +598,8 @@ local function autofarm()
                 }
 
                 game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end
-
-            local args = {
-                [1] = "S_Tools_Activate",
-                [2] = {}
-            }
-
-            game:GetService("ReplicatedStorage"):WaitForChild("Common"):WaitForChild("Library"):WaitForChild("Network"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
-        end
+	    end
+	end
     end
 end
 local function music()
