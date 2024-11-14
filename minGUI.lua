@@ -233,8 +233,8 @@ local function YUYC_fake_script() -- CloseBtn.LocalScript
 	end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.ScreenGui:Destroy()
-		script.Parent.Parent.Parent:Destroy()
+		game.Players.LocalPlayer.PlayerGui.ScreenGui:Destroy()
+		game.Players.LocalPlayer.PlayerGui.Minimised:Destroy()
 	end)
 end
 coroutine.wrap(YUYC_fake_script)()
@@ -250,8 +250,8 @@ local function UMODAU_fake_script() -- MaximiseBtn.LocalScript
 	end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Enabled = false
-		script.Parent.Parent.Parent.Parent.ScreenGui.Enabled = true
+		game.Players.LocalPlayer.PlayerGui.Minimised.Enabled = false
+		game.Players.LocalPlayer.PlayerGui.ScreenGui.Enabled = true
 	end)
 end
 coroutine.wrap(UMODAU_fake_script)()
