@@ -51,7 +51,14 @@ end
 local function autorebirth()
     while wait() do
         if getgenv().AutoRebirthEnabled then
-            
+            if game:GetService("Players").EMRzKRlmOZxamcmGcPtq.PlayerGui.Main.Menus.Rebirth.RebirthBtn.BackgroundColor3 ~= Color3.new(150, 161, 166) then
+                local args = {
+                    [1] = "S_Rebirth_Request",
+                    [2] = {}
+                }
+                
+                game:GetService("ReplicatedStorage").Common.Library.Network.RemoteFunction:InvokeServer(unpack(args))
+            end
         end
     end
 end
