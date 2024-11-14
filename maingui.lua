@@ -642,7 +642,7 @@ local function autokill()
 		    end
 				
 		    if inarea(game:GetService("Workspace").SafeZone.Sensor, v.Character) == false then
-		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = chars[v.Name].HumanoidRootPart.CFrame
+		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(Vector3.new(chars[v.Name].HumanoidRootPart.CFrame.X, chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame.Y, chars[v.Name].HumanoidRootPart.CFrame.Z))
 		    end
 		end
 	   end
