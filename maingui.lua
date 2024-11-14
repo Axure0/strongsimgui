@@ -628,6 +628,8 @@ local function autokill()
 	   if getgenv().AutoFarmEnabled then
 		getgenv().UIToggle(game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.Frame.Frame.Frame.Frame.Main.Frame.AutoFarm, "AutoFarmEnabled")
 	   end
+
+	   local oldyframe = chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame.Y
 	
 	   for i,v in pairs(game:GetService("Players"):GetChildren()) do
 		if v ~= game.Players.LocalPlayer then
@@ -642,7 +644,7 @@ local function autokill()
 		    end
 				
 		    if inarea(game:GetService("Workspace").SafeZone.Sensor, v.Character) == false then
-		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(Vector3.new(chars[v.Name].HumanoidRootPart.CFrame.X, chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame.Y, chars[v.Name].HumanoidRootPart.CFrame.Z))
+		        chars[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(Vector3.new(chars[v.Name].HumanoidRootPart.CFrame.X, oldyframe, chars[v.Name].HumanoidRootPart.CFrame.Z))
 		    end
 		end
 	   end
